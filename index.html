@@ -1,0 +1,832 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aujla Food &amp; Wine — 102 London Road, High Wycombe</title>
+<meta name="description" content="Neighbourhood food &amp; wine shop on the London Road, High Wycombe. Wine, beer, spirits, tobacco, lottery and everyday groceries — HP11 1DB.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #14201a;
+  --paper: #f3ead4;
+  --paper-deep: #ead9b6;
+  --bottle: #1f3a2a;
+  --bottle-deep: #122418;
+  --brass: #b9883a;
+  --brass-bright: #d6a14a;
+  --oxblood: #6a1e1f;
+  --rule: #2d4a37;
+  --font-display: "Libre Baskerville", "Hoefler Text", Georgia, serif;
+  --font-body: "Work Sans", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 0.55rem + 0.6vw, 1.1rem);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: .35;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.08  0 0 0 0 0.13  0 0 0 0 0.10  0 0 0 0.06 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; margin: 0; text-wrap: balance; }
+p { text-wrap: pretty; hyphens: auto; margin: 0; }
+a { color: inherit; text-decoration: none; }
+
+/* ───────────── TOP BAR ─────────────── */
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.1rem clamp(1.1rem, 4vw, 3rem);
+  border-bottom: 1px solid rgba(20, 32, 26, 0.18);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.topbar__mark {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--bottle-deep);
+}
+.topbar__mark::before {
+  content: "❦  ";
+  color: var(--brass);
+}
+.topbar__address {
+  display: none;
+  color: var(--bottle);
+}
+@media (min-width: 700px) {
+  .topbar__address { display: inline; }
+}
+.topbar__est {
+  color: var(--bottle-deep);
+  font-feature-settings: "smcp";
+}
+
+/* ───────────── MASTHEAD ─────────────── */
+
+.mast {
+  padding: clamp(2rem, 6vw, 4.5rem) clamp(1.1rem, 4vw, 3rem) clamp(1rem, 3vw, 2rem);
+  position: relative;
+}
+.mast__kicker {
+  font-size: 0.72rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--bottle);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+.mast__kicker::before, .mast__kicker::after {
+  content: "";
+  height: 1px;
+  background: var(--rule);
+  flex: 0 0 1.6rem;
+  opacity: 0.55;
+}
+.mast__kicker::after { flex: 1 1 auto; }
+
+.mast__name {
+  font-size: clamp(4.2rem, 18.5vw, 16rem);
+  line-height: 0.82;
+  letter-spacing: -0.045em;
+  color: var(--bottle-deep);
+  margin: 0;
+  font-weight: 700;
+}
+.mast__name span {
+  display: inline-block;
+  position: relative;
+}
+.mast__name .amp {
+  font-style: italic;
+  color: var(--brass);
+  font-weight: 400;
+  padding: 0 0.05em;
+}
+
+.mast__row {
+  margin-top: clamp(1.3rem, 3vw, 2.4rem);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
+  align-items: end;
+}
+@media (min-width: 760px) {
+  .mast__row {
+    grid-template-columns: 1.4fr 1fr;
+    gap: 2.5rem;
+  }
+}
+.mast__line {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.05rem, 0.6rem + 1.2vw, 1.55rem);
+  line-height: 1.4;
+  color: var(--ink);
+  max-width: 32ch;
+}
+.mast__line em {
+  font-style: normal;
+  color: var(--oxblood);
+  font-weight: 700;
+}
+.mast__addr {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  letter-spacing: 0.04em;
+  text-align: left;
+  color: var(--bottle);
+}
+@media (min-width: 760px) {
+  .mast__addr { text-align: right; }
+}
+.mast__addr strong {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  color: var(--bottle-deep);
+  margin-bottom: 0.25rem;
+}
+.mast__addr span {
+  display: block;
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--brass);
+  margin-top: 0.45rem;
+}
+
+/* ───────────── MARQUEE ─────────────── */
+
+.marquee {
+  margin-top: clamp(2rem, 5vw, 3.5rem);
+  background: var(--bottle-deep);
+  color: var(--paper);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  overflow: hidden;
+  position: relative;
+}
+.marquee::before, .marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  z-index: 2;
+  pointer-events: none;
+}
+.marquee::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bottle-deep), transparent);
+}
+.marquee::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bottle-deep), transparent);
+}
+.marquee__track {
+  display: inline-flex;
+  gap: 2.5rem;
+  white-space: nowrap;
+  padding: 1.15rem 0;
+  animation: scroll 38s linear infinite;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.1rem, 0.6rem + 1vw, 1.6rem);
+  color: var(--paper);
+  letter-spacing: 0.01em;
+}
+.marquee__track span {
+  display: inline-flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+.marquee__track span::after {
+  content: "✦";
+  color: var(--brass-bright);
+  font-style: normal;
+  font-size: 0.9em;
+}
+@keyframes scroll { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) {
+  .marquee__track { animation: none; padding-left: 1.5rem; }
+}
+
+/* ───────────── SHOP / INSIDE ─────────────── */
+
+.inside {
+  padding: clamp(3.5rem, 8vw, 6rem) clamp(1.1rem, 4vw, 3rem);
+  border-bottom: 1px solid rgba(20, 32, 26, 0.18);
+  position: relative;
+}
+.inside__head {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
+  margin-bottom: clamp(2rem, 5vw, 3.5rem);
+}
+@media (min-width: 820px) {
+  .inside__head {
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: end;
+  }
+}
+.inside__title {
+  font-size: clamp(2.4rem, 1.5rem + 3vw, 4.5rem);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: var(--bottle-deep);
+}
+.inside__title em {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--brass);
+}
+.inside__intro {
+  font-size: clamp(1rem, 0.7rem + 0.5vw, 1.2rem);
+  color: var(--ink);
+  max-width: 42ch;
+  line-height: 1.55;
+}
+
+.broad {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+@media (min-width: 720px) {
+  .broad { grid-template-columns: 1fr 1fr; column-gap: clamp(2rem, 5vw, 4rem); }
+}
+@media (min-width: 1080px) {
+  .broad { grid-template-columns: 1fr 1fr 1fr; }
+}
+
+.dept {
+  border-top: 1px solid var(--rule);
+  padding: 1.6rem 0 1.8rem;
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: 0.8rem;
+}
+.dept__no {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--brass);
+  font-size: 1.05rem;
+  line-height: 1.2;
+  padding-top: 0.35rem;
+}
+.dept__name {
+  font-size: clamp(1.4rem, 1rem + 0.9vw, 1.85rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--bottle-deep);
+  margin-bottom: 0.6rem;
+}
+.dept__name em {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--oxblood);
+}
+.dept__items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--ink);
+}
+.dept__items li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.4rem;
+  padding-bottom: 0.05rem;
+}
+.dept__items li::before { content: ""; }
+.dept__items li i {
+  font-style: italic;
+  color: var(--bottle);
+  font-family: var(--font-display);
+  font-size: 0.9em;
+  opacity: 0.85;
+}
+
+@supports (animation-timeline: view()) {
+  .dept {
+    animation: rise both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 22%;
+  }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(1.5rem); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+}
+
+.inside__note {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--rule);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--bottle);
+  max-width: 60ch;
+}
+
+/* ───────────── FIND US ─────────────── */
+
+.find {
+  background: var(--bottle-deep);
+  color: var(--paper);
+  padding: clamp(3.5rem, 8vw, 6rem) clamp(1.1rem, 4vw, 3rem);
+  position: relative;
+  overflow: hidden;
+}
+.find::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background-image:
+    radial-gradient(circle at 18% 30%, rgba(214, 161, 74, 0.08), transparent 40%),
+    radial-gradient(circle at 82% 80%, rgba(106, 30, 31, 0.18), transparent 45%);
+  pointer-events: none;
+}
+
+.find__inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 4vw, 3.5rem);
+}
+@media (min-width: 880px) {
+  .find__inner { grid-template-columns: 1.1fr 1fr; align-items: start; }
+}
+
+.find__title {
+  font-size: clamp(2.6rem, 1.6rem + 3.5vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--paper);
+  margin-bottom: 1.4rem;
+}
+.find__title em {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--brass-bright);
+  font-weight: 400;
+}
+
+.find__sub {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.05rem, 0.6rem + 0.8vw, 1.35rem);
+  line-height: 1.5;
+  color: var(--paper-deep);
+  max-width: 38ch;
+  margin-bottom: 1.8rem;
+}
+
+.find__map {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.8rem 1.1rem 0.8rem 1.1rem;
+  border: 1px solid var(--brass);
+  color: var(--brass-bright);
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+.find__map:hover {
+  background: var(--brass);
+  color: var(--bottle-deep);
+  transform: translateY(-2px);
+}
+.find__map::after {
+  content: "→";
+  font-size: 1.1rem;
+  letter-spacing: 0;
+}
+
+/* letterhead card */
+.card {
+  background: var(--paper);
+  color: var(--ink);
+  padding: clamp(2rem, 4vw, 3rem);
+  position: relative;
+  border: 1px solid var(--brass);
+  box-shadow: 14px 14px 0 var(--oxblood);
+}
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid var(--rule);
+  pointer-events: none;
+}
+.card__head {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  color: var(--bottle);
+  text-align: center;
+  margin-bottom: 1.2rem;
+}
+.card__big {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 1rem + 1.5vw, 2.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  text-align: center;
+  color: var(--bottle-deep);
+  margin-bottom: 0.4rem;
+}
+.card__line {
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+}
+.card__line + .card__line { margin-top: 0.1rem; }
+.card__rule {
+  border: none;
+  border-top: 1px solid var(--rule);
+  width: 40%;
+  margin: 1.4rem auto;
+}
+.card__post {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.28em;
+  color: var(--oxblood);
+}
+.card__foot {
+  margin-top: 1.4rem;
+  text-align: center;
+  font-size: 0.7rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--bottle);
+}
+
+/* ───────────── TRUST / RATING ─────────────── */
+
+.trust {
+  padding: clamp(3rem, 6vw, 5rem) clamp(1.1rem, 4vw, 3rem);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+@media (min-width: 800px) {
+  .trust { grid-template-columns: 1fr 1.5fr; }
+}
+.trust__badge {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+.trust__hyg {
+  display: inline-flex;
+  flex-direction: column;
+  padding: 1.2rem 1.6rem;
+  border: 2px solid var(--bottle-deep);
+  background: var(--paper);
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--bottle-deep);
+  line-height: 1.4;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.trust__hyg strong {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-style: italic;
+  font-size: 2.4rem;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--oxblood);
+  line-height: 1;
+  margin-top: 0.4rem;
+}
+.trust__hyg:hover {
+  background: var(--paper-deep);
+  transform: translate(-2px, -2px);
+}
+.trust__copy {
+  font-size: clamp(1rem, 0.6rem + 0.6vw, 1.2rem);
+  line-height: 1.55;
+  color: var(--ink);
+  max-width: 50ch;
+}
+.trust__copy em {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--oxblood);
+}
+.trust__copy a {
+  border-bottom: 1px solid var(--brass);
+  padding-bottom: 1px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.trust__copy a:hover {
+  color: var(--oxblood);
+  border-color: var(--oxblood);
+}
+
+/* ───────────── FOOTER ─────────────── */
+
+.foot {
+  background: var(--bottle-deep);
+  color: var(--paper-deep);
+  padding: clamp(3rem, 5vw, 4rem) clamp(1.1rem, 4vw, 3rem) 1.5rem;
+  position: relative;
+  border-top: 1px solid var(--rule);
+}
+.foot__mast {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.5rem, 1.5rem + 4vw, 6rem);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  color: var(--brass-bright);
+  margin-bottom: 1.5rem;
+}
+.foot__mast em {
+  font-style: italic;
+  color: var(--paper);
+  font-weight: 400;
+  padding: 0 0.1em;
+}
+.foot__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  border-top: 1px solid var(--rule);
+  padding-top: 2rem;
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+@media (min-width: 720px) {
+  .foot__grid { grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+}
+.foot__col h4 {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  color: var(--brass);
+  margin-bottom: 0.6rem;
+}
+.foot__col p { letter-spacing: 0.02em; }
+.foot__col a:hover { color: var(--brass-bright); }
+.foot__line {
+  margin-top: 2.4rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.6rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--bottle);
+  filter: brightness(1.7);
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <span class="topbar__mark">Aujla &mdash; <em>Food &amp; Wine</em></span>
+  <span class="topbar__address">102 London Road · HP11 1DB</span>
+  <span class="topbar__est">High&nbsp;Wycombe</span>
+</header>
+
+<section class="mast" aria-labelledby="mast-name">
+  <p class="mast__kicker">Food, wine &amp; the everyday — on the London Road</p>
+
+  <h1 class="mast__name" id="mast-name">
+    <span>AUJLA</span>
+  </h1>
+
+  <div class="mast__row">
+    <p class="mast__line">
+      The neighbourhood <em>food &amp; wine</em> shop at the foot of the London Road —
+      where you swing in for a bottle on the way home, a tin you forgot, or a Lotto
+      ticket for the weekend.
+    </p>
+    <p class="mast__addr">
+      <strong>102 London Road</strong>
+      High Wycombe, Buckinghamshire
+      <span>HP11 · 1DB</span>
+    </p>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>Wine</span><span>Beer</span><span>Spirits</span><span>Tobacco</span><span>Lottery</span><span>Groceries</span><span>Soft Drinks</span><span>Snacks</span><span>Confectionery</span><span>Wine</span><span>Beer</span><span>Spirits</span><span>Tobacco</span><span>Lottery</span><span>Groceries</span><span>Soft Drinks</span><span>Snacks</span><span>Confectionery</span>
+  </div>
+</div>
+
+<section class="inside" aria-labelledby="inside-title">
+  <div class="inside__head">
+    <h2 class="inside__title" id="inside-title">Step <em>inside</em> the shop</h2>
+    <p class="inside__intro">
+      An honest London-Road off-licence and convenience store. We&rsquo;ve laid the
+      counter out the way you&rsquo;d walk it — the cellar first, then the everyday.
+      No fuss, no fanfare. Just a useful shop on a useful corner.
+    </p>
+  </div>
+
+  <div class="broad">
+
+    <article class="dept">
+      <span class="dept__no">№ I</span>
+      <div>
+        <h3 class="dept__name">The <em>Cellar</em></h3>
+        <ul class="dept__items">
+          <li>Wine — red, white &amp; rosé <i>by the bottle</i></li>
+          <li>Sparkling &amp; Prosecco <i>weekend</i></li>
+          <li>Beer &amp; cider — singles &amp; multipacks <i>chilled</i></li>
+          <li>Craft &amp; world beers <i>rotating</i></li>
+          <li>Spirits &mdash; whisky, vodka, gin, rum <i>full range</i></li>
+          <li>Liqueurs &amp; mixers <i>the basics</i></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="dept">
+      <span class="dept__no">№ II</span>
+      <div>
+        <h3 class="dept__name">The <em>Counter</em></h3>
+        <ul class="dept__items">
+          <li>Cigarettes &amp; rolling tobacco <i>behind the gantry</i></li>
+          <li>Vape pods &amp; refills <i>selected</i></li>
+          <li>Newspapers &amp; magazines <i>morning</i></li>
+          <li>National Lottery &amp; Scratchcards <i>weekly draws</i></li>
+          <li>Top-ups, e-cards &amp; PayPoint <i>where available</i></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="dept">
+      <span class="dept__no">№ III</span>
+      <div>
+        <h3 class="dept__name">The <em>Everyday</em></h3>
+        <ul class="dept__items">
+          <li>Bread, milk &amp; eggs <i>the staples</i></li>
+          <li>Tea, coffee &amp; sugar <i>kitchen-cupboard</i></li>
+          <li>Tinned &amp; dry goods <i>cupboard fillers</i></li>
+          <li>Snacks, crisps &amp; nuts <i>aisle two</i></li>
+          <li>Soft drinks &amp; juices <i>chilled</i></li>
+          <li>Confectionery &mdash; chocolate &amp; sweets <i>by the till</i></li>
+        </ul>
+      </div>
+    </article>
+
+  </div>
+
+  <p class="inside__note">
+    A neighbourhood shop changes with the week &mdash; pop in to see today&rsquo;s
+    counter. If we haven&rsquo;t got it on the shelf, the chances are we&rsquo;ll
+    point you to whoever does, two doors down.
+  </p>
+</section>
+
+<section class="find" aria-labelledby="find-title">
+  <div class="find__inner">
+    <div>
+      <h2 class="find__title" id="find-title">Find <em>us</em> on the London&nbsp;Road</h2>
+      <p class="find__sub">
+        We&rsquo;re part of the parade running up out of town &mdash; one of the
+        small shops you pass every day until the day you need one. That&rsquo;s
+        the day to remember the number 102.
+      </p>
+      <a class="find__map"
+         href="https://www.google.com/maps/search/?api=1&query=Aujla+Food+and+Wine+102+London+Road+High+Wycombe+HP11+1DB"
+         target="_blank" rel="noopener noreferrer">
+        Open in Google Maps
+      </a>
+    </div>
+
+    <aside class="card" aria-label="Shop address">
+      <p class="card__head">— Aujla Food &amp; Wine —</p>
+      <p class="card__big">102 London Road</p>
+      <p class="card__line">High Wycombe</p>
+      <p class="card__line">Buckinghamshire</p>
+      <hr class="card__rule">
+      <p class="card__post">H&nbsp;P&nbsp;1&nbsp;1&nbsp;&middot;&nbsp;1&nbsp;D&nbsp;B</p>
+      <p class="card__foot">Independent · Family-run</p>
+    </aside>
+  </div>
+</section>
+
+<section class="trust" aria-labelledby="trust-title">
+  <div class="trust__badge">
+    <a class="trust__hyg"
+       href="https://ratings.food.gov.uk/business/486262"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Food Standards Agency hygiene rating — view on ratings.food.gov.uk">
+      Food&nbsp;Standards&nbsp;Agency
+      <strong>Hygiene Rating</strong>
+    </a>
+  </div>
+  <div>
+    <h2 class="trust__copy" id="trust-title">
+      A working <em>shop</em> on a working road &mdash; on the
+      <a href="https://ratings.food.gov.uk/business/486262" target="_blank" rel="noopener noreferrer">Food Standards Agency register</a>,
+      with our inspections public and our address printed on the door. No app,
+      no membership, no fuss.
+    </h2>
+  </div>
+</section>
+
+<footer class="foot" aria-labelledby="foot-mast">
+  <h2 class="foot__mast" id="foot-mast">Aujla <em>&amp;</em> Co.</h2>
+
+  <div class="foot__grid">
+    <div class="foot__col">
+      <h4>Where</h4>
+      <p>
+        102 London Road<br>
+        High Wycombe<br>
+        Buckinghamshire<br>
+        HP11 1DB
+      </p>
+    </div>
+    <div class="foot__col">
+      <h4>What</h4>
+      <p>
+        Food, wine &amp; the everyday.<br>
+        Off-licence &middot; Convenience store<br>
+        Newsagent &middot; Lottery
+      </p>
+    </div>
+    <div class="foot__col">
+      <h4>On the record</h4>
+      <p>
+        <a href="https://ratings.food.gov.uk/business/486262" target="_blank" rel="noopener noreferrer">FSA hygiene rating &rarr;</a><br>
+        <a href="https://www.google.com/maps/search/?api=1&query=Aujla+Food+and+Wine+102+London+Road+High+Wycombe+HP11+1DB" target="_blank" rel="noopener noreferrer">Find us on the map &rarr;</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="foot__line">
+    <span>An independent off-licence &amp; convenience store · High Wycombe</span>
+    <span>HP11 · 1DB</span>
+  </div>
+</footer>
+
+</body>
+</html>
